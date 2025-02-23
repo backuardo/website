@@ -7,13 +7,23 @@ const FOOTER_ITEMS = [
     Component: InternalLink,
   },
   {
+    href: "https://github.com/backuardo/website",
+    children: "view source",
+    Component: ExternalLink,
+  },
+  {
     href: "https://github.com/backuardo",
     children: "github",
     Component: ExternalLink,
   },
   {
-    href: "https://github.com/backuardo/website",
-    children: "view source",
+    href: "https://www.linkedin.com/in/ben-eisner/",
+    children: "linkedin",
+    Component: ExternalLink,
+  },
+  {
+    href: "https://x.com/backuardo",
+    children: "x",
     Component: ExternalLink,
   },
 ];

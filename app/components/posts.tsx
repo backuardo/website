@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { File } from "@phosphor-icons/react/dist/ssr";
+
 import { formatDate, getBlogPosts } from "app/workbench/utils";
 
 export function Posts() {
@@ -15,6 +17,7 @@ export function Posts() {
           href={`/workbench/${post.slug}`}
         >
           <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2 text-sm align-center text-xs">
+            <File weight="bold" className="text-green-500 mt-0.5" />
             <p className="text-neutral-600 w-[100px] tabular-nums">
               {formatDate(post.metadata.publishedAt, false)}
             </p>

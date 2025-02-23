@@ -1,4 +1,5 @@
 import NextLink from "next/link";
+import { ArrowElbowRightUp } from "@phosphor-icons/react/dist/ssr";
 
 import { classNames } from "../utils/class-names";
 
@@ -42,7 +43,7 @@ export function ExternalLink({
       className={classNames(linkClassName, className)}
       {...props}
     >
-      [{children}]
+      [{children} <ArrowElbowRightUp weight="bold" className="ml-0.5 mt-0.5" />]
     </a>
   );
 }
