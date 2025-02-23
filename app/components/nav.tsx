@@ -35,10 +35,10 @@ export function Navbar() {
   };
 
   return (
-    <aside className="-ml-[8px] mb-16 tracking-tight">
+    <aside className="mb-16 tracking-tight">
       <div className="lg:sticky lg:top-20">
         <nav
-          className="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
+          className="flex flex-row items-start relative fade md:overflow-auto scroll-pr-6 md:relative"
           id="nav"
         >
           <div className="flex flex-row uppercase w-full justify-between items-center text-sm">
@@ -49,7 +49,7 @@ export function Navbar() {
                 </InternalLink>
               ))}
             </div>
-            <span className="flex align-middle relative px-2 text-red-500 text-xs">
+            <span className="flex align-middle relative text-red-500 text-xs">
               {getBreadcrumb()}
             </span>
           </div>

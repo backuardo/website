@@ -30,6 +30,8 @@
 }
 
 html {
+  @apply bg-neutral-100;
+
   min-width: 360px;
 }
 
@@ -61,11 +63,11 @@ html {
 }
 
 .prose pre {
-  @apply bg-neutral-50 rounded-lg overflow-x-auto border border-neutral-200 py-2 px-3 text-sm;
+  @apply bg-neutral-50 overflow-x-auto border border-neutral-200 py-2 px-3 text-sm;
 }
 
 .prose code {
-  @apply px-1 py-0.5 rounded-lg;
+  @apply px-1 py-0.5;
 }
 
 .prose pre code {
