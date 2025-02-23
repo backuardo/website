@@ -67,7 +67,7 @@ html {
 }
 
 .prose code {
-  @apply px-1 py-0.5;
+  @apply px-1 py-0.5 text-xs;
 }
 
 .prose pre code {
@@ -86,7 +86,7 @@ html {
 }
 
 .prose p {
-  @apply my-4 text-neutral-800;
+  @apply my-4 text-neutral-800 text-sm;
 }
 
 .prose h1 {
@@ -106,7 +106,7 @@ html {
 }
 
 .prose strong {
-  @apply font-medium;
+  @apply font-semibold;
 }
 
 .prose ul {
