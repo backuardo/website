@@ -15,10 +15,12 @@ export default function Page() {
         {`A collection of ideas, experiments, and helpful snippets.`}
       </p>
       <p className="mb-4 text-sm">
-        {`Much of the content here will draw inspiration from the efforts of
+        {`
+          Much of the content here will draw inspiration from the efforts of
 					others, including direct references to their work. I'm committed to
 					acknowledging their contributions and ensuring proper credit is
-					given to the original authors.`}
+					given to the original authors.
+        `}
       </p>
       <Posts />
     </section>
