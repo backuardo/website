@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "./components/footer";
 import { baseUrl } from "./sitemap";
+import { classNames } from "./utils/class-names";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -36,8 +37,6 @@ export const metadata: Metadata = {
   },
 };
 
-const cx = (...classes) => classes.filter(Boolean).join(" ");
-
 export default function RootLayout({
   children,
 }: {
@@ -46,7 +45,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cx(
+      className={classNames(
         "text-black bg-white",
         GeistSans.variable,
         GeistMono.variable

@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { InternalLink } from "app/components/link";
 
-const navItems = {
+const NAV_ITEMS = {
   "/": {
     name: "home",
   },
@@ -42,18 +42,14 @@ export function Navbar() {
           id="nav"
         >
           <div className="flex flex-row uppercase w-full justify-between items-center text-sm">
-            <div className="flex flex-row">
-              {Object.entries(navItems).map(([path, { name }]) => (
-                <Link
-                  key={path}
-                  href={path}
-                  className={`transition-all hover:text-neutral-300 flex align-middle relative px-1`}
-                >
-                  [{name}]
-                </Link>
+            <div className="flex flex-row space-x-2">
+              {Object.entries(NAV_ITEMS).map(([path, { name }]) => (
+                <InternalLink key={path} href={path}>
+                  {name}
+                </InternalLink>
               ))}
             </div>
-            <span className="flex align-middle relative px-2 text-neutral-500 text-xs">
+            <span className="flex align-middle relative px-2 text-red-500 text-xs">
               {getBreadcrumb()}
             </span>
           </div>
