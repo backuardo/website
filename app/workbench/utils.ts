@@ -59,32 +59,43 @@ export function formatDate(date: string, includeRelative = false) {
     date = `${date}T00:00:00`;
   }
   let targetDate = new Date(date);
-
+  const day = targetDate.getDate().toString().padStart(2, "0");
+  const month = targetDate
+    .toLocaleString("en-us", { month: "short" })
+    .toUpperCase();
+  const year = targetDate.getFullYear().toString().slice(-2);
+  const fullDate = `${day}-${month}-${year}`;
   let yearsAgo = currentDate.getFullYear() - targetDate.getFullYear();
   let monthsAgo = currentDate.getMonth() - targetDate.getMonth();
   let daysAgo = currentDate.getDate() - targetDate.getDate();
 
-  let formattedDate = "";
-
-  if (yearsAgo > 0) {
-    formattedDate = `${yearsAgo}y ago`;
-  } else if (monthsAgo > 0) {
-    formattedDate = `${monthsAgo}mo ago`;
-  } else if (daysAgo > 0) {
-    formattedDate = `${daysAgo}d ago`;
-  } else {
-    formattedDate = "Today";
+  if (daysAgo < 0) {
+    monthsAgo -= 1;
+    daysAgo += new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth(),
+      0
+    ).getDate();
+  }
+  if (monthsAgo < 0) {
+    yearsAgo -= 1;
+    monthsAgo += 12;
   }
 
-  let fullDate = targetDate.toLocaleString("en-us", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  });
+  let formattedRelative = "";
+  if (yearsAgo > 0) {
+    formattedRelative = `${yearsAgo}Y AGO`;
+  } else if (monthsAgo > 0) {
+    formattedRelative = `${monthsAgo}M AGO`;
+  } else if (daysAgo > 0) {
+    formattedRelative = `${daysAgo}D AGO`;
+  } else {
+    formattedRelative = "TODAY";
+  }
 
   if (!includeRelative) {
     return fullDate;
   }
 
-  return `${fullDate} (${formattedDate})`;
+  return `${fullDate} (${formattedRelative})`;
 }
