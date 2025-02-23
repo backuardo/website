@@ -1,36 +1,29 @@
 import Link from "next/link";
 import { formatDate, getBlogPosts } from "app/workbench/utils";
 
-export function BlogPosts() {
-  let allBlogs = getBlogPosts();
+export function Posts() {
+  let allBlogs = getBlogPosts().sort((a, b) =>
+    new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt) ? -1 : 1
+  );
 
   return (
-    <div>
-      {allBlogs
-        .sort((a, b) => {
-          if (
-            new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)
-          ) {
-            return -1;
-          }
-          return 1;
-        })
-        .map((post) => (
-          <Link
-            key={post.slug}
-            className="flex flex-col space-y-1 mb-4"
-            href={`/workbench/${post.slug}`}
-          >
-            <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2 text-sm align-center">
-              <p className="text-neutral-600 w-[100px] tabular-nums">
-                {formatDate(post.metadata.publishedAt, false)}
-              </p>
-              <p className="text-neutral-900 tracking-tight">
-                {post.metadata.title}
-              </p>
-            </div>
-          </Link>
-        ))}
+    <div className="bg-neutral-50 border-1 border-neutral-200 p-2 space-y-4">
+      {allBlogs.map((post) => (
+        <Link
+          key={post.slug}
+          className="flex flex-col space-y-1"
+          href={`/workbench/${post.slug}`}
+        >
+          <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2 text-sm align-center text-xs">
+            <p className="text-neutral-600 w-[100px] tabular-nums">
+              {formatDate(post.metadata.publishedAt, false)}
+            </p>
+            <p className="text-neutral-900 tracking-tight">
+              {post.metadata.title}
+            </p>
+          </div>
+        </Link>
+      ))}
     </div>
   );
 }

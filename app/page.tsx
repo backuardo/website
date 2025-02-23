@@ -1,10 +1,10 @@
-import { BlogPosts } from "app/components/posts";
+import { Posts } from "app/components/posts";
 
 export default function Page() {
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        www.beneisner.io
+      <h1 className="mb-8 text-2xl font-semibold tracking-tighter uppercase">
+        Backuardo
       </h1>
       <p className="mb-4 text-sm">
         {`I'm a Vim enthusiast and tab advocate, finding unmatched efficiency in
@@ -14,7 +14,7 @@ export default function Page() {
         mode, which eases long coding sessions by reducing eye strain.`}
       </p>
       <div className="my-8">
-        <BlogPosts />
+        <Posts />
       </div>
     </section>
   );
