@@ -17,10 +17,12 @@ export function Posts() {
           href={`/workbench/${post.slug}`}
         >
           <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2 text-sm align-center text-xs">
-            <File weight="bold" className="text-green-500 mt-0.5" />
-            <p className="text-neutral-600 w-[100px] tabular-nums">
-              {formatDate(post.metadata.publishedAt, false)}
-            </p>
+            <div className="flex flex-row space-x-2">
+              <File weight="bold" className="text-green-500 mt-0.5" />
+              <p className="text-neutral-600 w-[100px] tabular-nums">
+                {formatDate(post.metadata.publishedAt, false)}
+              </p>
+            </div>
             <p className="text-neutral-900 tracking-tight">
               {post.metadata.title}
             </p>

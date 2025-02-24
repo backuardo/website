@@ -1,6 +1,6 @@
 import { ExternalLink, InternalLink } from "app/components/link";
 
-const FOOTER_ITEMS = [
+const FOOTER_ITEMS_LEFT = [
   {
     href: "/rss",
     children: "rss",
@@ -32,7 +32,7 @@ export default function Footer() {
   return (
     <footer className="mb-16">
       <ul className="mt-8 flex flex-col md:space-x-2 space-y-2 uppercase md:flex-row md:space-y-0">
-        {FOOTER_ITEMS.map(({ href, children, Component }) => (
+        {FOOTER_ITEMS_LEFT.map(({ href, children, Component }) => (
           <li key={href}>
             <Component href={href} className="text-xs">
               {children}
@@ -40,7 +40,7 @@ export default function Footer() {
           </li>
         ))}
       </ul>
-      <p className="mt-2 text-xs">
+      <p className="mt-2 text-xs uppercase">
         © {new Date().getFullYear()} Backuardo Labs LLC
       </p>
     </footer>
