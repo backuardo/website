@@ -30,9 +30,13 @@
 }
 
 html {
-  @apply bg-neutral-100;
+  @apply bg-neutral-200;
 
   min-width: 360px;
+}
+
+p {
+  @apply text-neutral-600;
 }
 
 .prose .anchor {

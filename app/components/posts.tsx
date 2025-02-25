@@ -9,11 +9,11 @@ export function Posts() {
   );
 
   return (
-    <div className="bg-neutral-50 border-1 border-neutral-200 p-2 space-y-4">
+    <div className="bg-neutral-100 border-1 border-neutral-300 p-2 space-y-4">
       {allBlogs.map((post) => (
         <Link
           key={post.slug}
-          className="flex flex-col space-y-1"
+          className="flex flex-col space-y-1 group hover:underline-offset-2"
           href={`/workbench/${post.slug}`}
         >
           <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2 text-sm align-center text-xs">
@@ -23,7 +23,7 @@ export function Posts() {
                 {formatDate(post.metadata.publishedAt, false)}
               </p>
             </div>
-            <p className="text-neutral-900 tracking-tight">
+            <p className="text-neutral-900 tracking-tight group-hover:underline group-hover:decoration-neutral-300">
               {post.metadata.title}
             </p>
           </div>
