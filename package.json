@@ -6,8 +6,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@p5-wrapper/next": "^1.0.3",
-    "@p5-wrapper/react": "^4.4.2",
     "@phosphor-icons/react": "^2.1.7",
     "@tailwindcss/postcss": "4.0.0-alpha.13",
     "@types/node": "20.11.17",
@@ -18,7 +16,6 @@
     "geist": "1.2.2",
     "next": "canary",
     "next-mdx-remote": "^4.4.1",
-    "p5": "^1.11.3",
     "postcss": "^8.4.35",
     "react": "18.2.0",
     "react-dom": "18.2.0",
