@@ -3,6 +3,8 @@
 import { usePathname } from "next/navigation";
 import { InternalLink } from "app/components/link";
 
+import { Logo } from "./logo";
+
 const NAV_ITEMS = {
   "/": {
     name: "home",
@@ -36,7 +38,10 @@ export function Navbar() {
 
   return (
     <aside className="mb-16 tracking-tight">
-      <div className="lg:sticky lg:top-20">
+      <div className="lg:sticky lg:top-20 space-y-4">
+        <a href="/">
+          <Logo className="-ml-1" />
+        </a>
         <nav
           className="flex flex-row items-start relative fade md:overflow-auto scroll-pr-6 md:relative"
           id="nav"
@@ -44,7 +49,11 @@ export function Navbar() {
           <div className="flex flex-row uppercase w-full justify-between items-center text-sm">
             <div className="flex flex-row space-x-2">
               {Object.entries(NAV_ITEMS).map(([path, { name }]) => (
-                <InternalLink key={path} href={path}>
+                <InternalLink
+                  key={path}
+                  href={path}
+                  className={pathname === path ? "font-bold" : ""}
+                >
                   {name}
                 </InternalLink>
               ))}
