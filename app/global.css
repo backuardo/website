@@ -30,7 +30,7 @@
 }
 
 html {
-  @apply bg-neutral-200;
+  @apply bg-neutral-200/80;
 
   min-width: 360px;
 }
