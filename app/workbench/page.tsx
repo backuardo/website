@@ -12,17 +12,17 @@ export default function Page() {
         Workbench
       </h1>
       <p className="mb-4 text-sm">
-        {`A collection of ideas, experiments, and helpful snippets.`}
+        A collection of ideas, experiments, and helpful snippets.
       </p>
-      <p className="mb-4 text-sm">
-        {`
-          Much of the content here will draw inspiration from the efforts of
-					others, including direct references to their work. I'm committed to
-					acknowledging their contributions and ensuring proper credit is
-					given to the original authors.
-        `}
+      <p className="text-sm">
+        Much of the content here will draw inspiration from the efforts of
+        others, including direct references to their work. I'm committed to
+        acknowledging their contributions and ensuring proper credit is given to
+        the original authors.
       </p>
-      <Posts />
+      <div className="my-8">
+        <Posts />
+      </div>
     </section>
   );
 }
