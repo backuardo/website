@@ -13,17 +13,16 @@ export default function Page() {
       <p className="mb-4 text-sm">
         I began programming while serving as an infantry squad leader (0331) in
         the US Marine Corps. After my service, I studied computer science at
-        Dartmouth College and built early-stage products in the startup
-        ecosystem. From 2017 to 2023, I was an early engineer at Cameo, where I
-        helped scale the platform to millions of users and later led its crypto
-        initiatives. Currently, I'm the lead engineer at Cedar, a seed-stage
-        startup developing the operating system for urban development.
+        Dartmouth College and started getting involved in startups. From 2017 to
+        2023, I was an early engineer at Cameo, where I helped scale the
+        platform to millions of users and later led its crypto initiatives.
+        Currently, I'm the lead engineer at Cedar, a seed-stage startup
+        developing the operating system for urban development.
       </p>
       <p className="mb-4 text-sm">
         My current focus is offensive security &mdash; developing custom tooling
-        and exploitation techniques. I'm actively pursuing CPTS and OSCP
-        certifications to deepen my knowledge of system security and adversarial
-        tactics.
+        and exploitation techniques. I also consult and advise organizations on
+        TTPs for threat defense and incident response.
       </p>
       <div className="my-8">
         <Posts />
