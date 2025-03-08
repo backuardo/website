@@ -1,8 +1,17 @@
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { highlight } from "sugar-high";
-import React from "react";
+import rehypeHighlight from "rehype-highlight";
+import hljs from "highlight.js/lib/core"; // Core library
+import rust from "highlight.js/lib/languages/rust"; // Rust support
+import c from "highlight.js/lib/languages/c"; // C support
+import typescript from "highlight.js/lib/languages/typescript"; // TS support
+
+// Register languages with highlight.js
+hljs.registerLanguage("rust", rust);
+hljs.registerLanguage("c", c);
+hljs.registerLanguage("typescript", typescript);
 
 function Table({ data }) {
   let headers = data.headers.map((header, index) => (
@@ -49,8 +58,7 @@ function RoundedImage(props) {
 }
 
 function Code({ children, ...props }) {
-  let codeHTML = highlight(children);
-  return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
+  return <code {...props}>{children}</code>;
 }
 
 function slugify(str) {
@@ -104,6 +112,11 @@ export function CustomMDX(props) {
     <MDXRemote
       {...props}
       components={{ ...components, ...(props.components || {}) }}
+      options={{
+        mdxOptions: {
+          rehypePlugins: [[rehypeHighlight, { hljs }]], // Use custom hljs instance
+        },
+      }}
     />
   );
 }

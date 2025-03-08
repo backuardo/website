@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "highlight.js/styles/xt256.css";
 
 @theme {
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo,
@@ -13,15 +14,6 @@
 
 /* https://sugar-high.vercel.app/ */
 :root {
-  --sh-identifier: var(--color-neutral-900);
-  --sh-keyword: var(--color-red-600);
-  --sh-string: var(--color-teal-600);
-  --sh-class: var(--color-amber-600);
-  --sh-property: var(--color-blue-600);
-  --sh-entity: var(--color-sky-600);
-  --sh-jsxliterals: var(--color-violet-600);
-  --sh-sign: var(--color-green-600);
-  --sh-comment: var(--color-neutral-400);
 }
 
 html {
@@ -32,6 +24,10 @@ html {
 
 p {
   @apply text-lime-600;
+}
+
+.hljs {
+  background: var(--color-neutral-950);
 }
 
 .prose .anchor {
@@ -62,26 +58,17 @@ p {
 }
 
 .prose pre {
-  @apply bg-neutral-900 overflow-x-auto border border-neutral-200 py-2 px-3 text-sm;
+  @apply overflow-x-auto border border-lime-900 text-sm p-2;
 }
 
 .prose code {
-  @apply px-1 py-0.5 text-xs;
+  @apply text-xs;
 }
 
 .prose pre code {
   @apply p-0;
   border: initial;
   line-height: 1.5;
-  counter-reset: sh-line-number;
-}
-
-.prose .sh__line::before {
-  counter-increment: sh-line-number 1;
-  content: counter(sh-line-number);
-  margin-right: 8px;
-  text-align: right;
-  color: var(--color-neutral-400);
 }
 
 .prose code span {
