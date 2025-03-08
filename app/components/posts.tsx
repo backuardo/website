@@ -13,7 +13,7 @@ export function Posts() {
       <h2 className="mb-4 text-base font-bold tracking-tighter uppercase">
         Recent Posts
       </h2>
-      <div className="bg-neutral-100 border-1 border-neutral-300 p-2 space-y-4">
+      <div className="bg-neutral-900 border-1 border-lime-900 p-2 space-y-4">
         {allBlogs.map((post) => (
           <Link
             key={post.slug}
@@ -22,12 +22,12 @@ export function Posts() {
           >
             <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2 text-sm align-center text-xs">
               <div className="flex flex-row space-x-2">
-                <File weight="bold" className="text-green-500 mt-0.5" />
-                <p className="text-neutral-600 w-[100px] tabular-nums">
+                <File weight="bold" className="text-purple-500 mt-0.5" />
+                <p className="w-[100px] tabular-nums">
                   {formatDate(post.metadata.publishedAt, false)}
                 </p>
               </div>
-              <p className="text-neutral-900 tracking-tight group-hover:underline group-hover:decoration-neutral-300">
+              <p className="tracking-tight group-hover:underline group-hover:decoration-lime-700">
                 {post.metadata.title}
               </p>
             </div>

@@ -58,7 +58,7 @@ export function Navbar() {
                 </InternalLink>
               ))}
             </div>
-            <span className="flex align-middle relative text-blue-500 text-xs">
+            <span className="flex align-middle relative text-orange-500 text-xs">
               {getBreadcrumb()}
             </span>
           </div>

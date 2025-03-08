@@ -13,7 +13,7 @@ export const Logo: React.FC<Omit<SVGProps<SVGSVGElement>, "ref">> = ({
       width="40"
       height="40"
       viewBox="0 0 763.5 985.5"
-      className={classNames("fill-neutral-500", className)}
+      className={classNames("fill-lime-500", className)}
       {...props}
     >
       <path
