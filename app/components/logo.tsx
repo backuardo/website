@@ -14,7 +14,7 @@ export const Logo: React.FC<Omit<SVGProps<SVGSVGElement>, "ref">> = ({
       height="40"
       viewBox="0 0 763.5 985.5"
       className={classNames(
-        "fill-stone-400 hover:fill-gruvbox-orange transition-all",
+        "fill-stone-400/60 hover:fill-stone-300 transition-all",
         className
       )}
       {...props}

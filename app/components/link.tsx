@@ -4,7 +4,7 @@ import { ArrowElbowRightUp } from "@phosphor-icons/react/dist/ssr";
 import { classNames } from "../utils/class-names";
 
 const linkClassName =
-  "transition-all text-stone-400 hover:text-stone-300 flex align-middle relative";
+  "transition-all text-stone-400/60 hover:text-stone-300 flex align-middle relative";
 
 type LinkProps = {
   href: string;
