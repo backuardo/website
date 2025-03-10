@@ -53,7 +53,10 @@ export function Navbar() {
                   key={path}
                   href={path}
                   className={
-                    pathname === path ? "font-bold !text-gruvbox-orange" : ""
+                    pathname === path ||
+                    (path !== "/" && pathname.startsWith(path))
+                      ? "font-bold !text-gruvbox-orange"
+                      : ""
                   }
                 >
                   {name}
