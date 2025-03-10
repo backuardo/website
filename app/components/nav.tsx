@@ -52,13 +52,15 @@ export function Navbar() {
                 <InternalLink
                   key={path}
                   href={path}
-                  className={pathname === path ? "font-bold" : ""}
+                  className={
+                    pathname === path ? "font-bold !text-gruvbox-orange" : ""
+                  }
                 >
                   {name}
                 </InternalLink>
               ))}
             </div>
-            <span className="flex align-middle relative text-orange-500 text-xs">
+            <span className="flex align-middle relative text-gruvbox-lime text-xs">
               {getBreadcrumb()}
             </span>
           </div>

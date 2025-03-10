@@ -4,7 +4,8 @@ export default function Page() {
   return (
     <section>
       <h1 className="mb-8 text-2xl font-bold tracking-tighter uppercase">
-        Ben Eisner <span className="font-normal">(a.k.a Backuardo)</span>
+        Ben Eisner{" "}
+        <span className="font-normal text-gruvbox-lime">(a.k.a Backuardo)</span>
       </h1>
       <p className="mb-4 text-sm">
         I'm a software engineer with a broad toolkit, now specializing in

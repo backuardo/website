@@ -13,12 +13,15 @@ export const Logo: React.FC<Omit<SVGProps<SVGSVGElement>, "ref">> = ({
       width="40"
       height="40"
       viewBox="0 0 763.5 985.5"
-      className={classNames("fill-lime-500", className)}
+      className={classNames(
+        "fill-stone-400 hover:fill-gruvbox-orange transition-all",
+        className
+      )}
       {...props}
     >
       <path
         fillRule="evenodd"
-        stroke="currentColor"
+        // stroke="var(--color-gruvbox-orange)"
         strokeWidth="4"
         strokeLinecap="butt"
         strokeLinejoin="miter"

@@ -46,10 +46,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={classNames(GeistSans.variable, GeistMono.variable)}
+      className={classNames(
+        GeistSans.variable,
+        GeistMono.variable,
+        "!bg-neutral-950"
+      )}
     >
-      <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto font-mono">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+      <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto font-mono bg-neutral-950">
+        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0 bg-neutral-950">
           <Navbar />
           {children}
           <Footer />

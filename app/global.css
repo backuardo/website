@@ -1,9 +1,24 @@
 @import "tailwindcss";
-@import "highlight.js/styles/xt256.css";
+@import "highlight.js/styles/base16/gruvbox-dark-hard.css";
 
 @theme {
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo,
     Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --color-gruvbox-lime: #b8bb26;
+  --color-gruvbox-orange: #fb4934;
+  --color-gruvbox-purple: #d3869b;
+  --color-gruvbox-blue: #83a598;
+  --color-stone-50: #faf7f2;
+  --color-stone-100: #f2eee2;
+  --color-stone-200: #e5dbc3;
+  --color-stone-300: #d5c4a1;
+  --color-stone-400: #c1a476;
+  --color-stone-500: #b48d5b;
+  --color-stone-600: #a77b4f;
+  --color-stone-700: #8b6443;
+  --color-stone-800: #71523b;
+  --color-stone-900: #5c4432;
+  --color-stone-950: #312219;
 }
 
 @layer utilities {
@@ -12,22 +27,24 @@
   }
 }
 
-/* https://sugar-high.vercel.app/ */
-:root {
-}
-
 html {
-  @apply bg-neutral-950 text-lime-500;
-
+  @apply bg-neutral-950 text-stone-300;
   min-width: 360px;
 }
 
+body {
+  @apply bg-neutral-950;
+}
+
 p {
-  @apply text-lime-600;
+  @apply text-stone-300;
 }
 
 .hljs {
-  background: var(--color-neutral-950);
+  @apply bg-neutral-950;
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
 }
 
 .prose .anchor {
@@ -45,11 +62,11 @@ p {
 }
 
 .prose a {
-  @apply underline transition-all decoration-lime-600 underline-offset-2 decoration-[0.1em];
+  @apply underline transition-all decoration-stone-400 underline-offset-2 decoration-[0.1em];
 }
 
 .prose .anchor:after {
-  @apply text-neutral-300;
+  @apply text-stone-300;
   content: "#";
 }
 
@@ -58,7 +75,7 @@ p {
 }
 
 .prose pre {
-  @apply overflow-x-auto border border-lime-900 text-sm p-2;
+  @apply overflow-x-auto border border-stone-300/20 border-[0.1em] text-sm p-2;
 }
 
 .prose code {
@@ -81,7 +98,7 @@ p {
 }
 
 .prose p {
-  @apply my-4 text-lime-600 text-sm;
+  @apply my-4 text-stone-300 text-sm;
 }
 
 .prose h1 {

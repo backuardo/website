@@ -40,7 +40,7 @@ export default function Footer() {
           </li>
         ))}
       </ul>
-      <p className="mt-2 text-xs uppercase">
+      <p className="mt-2 text-xs uppercase !text-stone-400">
         © {new Date().getFullYear()} Backuardo Labs LLC
       </p>
     </footer>

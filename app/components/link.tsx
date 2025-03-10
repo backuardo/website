@@ -4,7 +4,7 @@ import { ArrowElbowRightUp } from "@phosphor-icons/react/dist/ssr";
 import { classNames } from "../utils/class-names";
 
 const linkClassName =
-  "transition-all text-lime-600 hover:text-lime-500 flex align-middle relative";
+  "transition-all text-stone-400 hover:text-stone-300 flex align-middle relative";
 
 type LinkProps = {
   href: string;
@@ -46,7 +46,7 @@ export function ExternalLink({
       [{children}{" "}
       <ArrowElbowRightUp
         weight="bold"
-        className="ml-0.5 mt-0.5 group-hover:text-purple-500"
+        className="ml-0.5 mt-0.5 group-hover:text-gruvbox-purple"
       />
       ]
     </a>
