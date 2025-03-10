@@ -37,7 +37,7 @@ body {
 }
 
 p {
-  @apply text-stone-300;
+  @apply text-stone-300/80;
 }
 
 .hljs {
@@ -62,7 +62,7 @@ p {
 }
 
 .prose a {
-  @apply underline transition-all decoration-stone-400 underline-offset-2 decoration-[0.1em];
+  @apply underline transition-all text-stone-300 decoration-stone-300 underline-offset-2 decoration-[0.1em];
 }
 
 .prose .anchor:after {
@@ -98,7 +98,7 @@ p {
 }
 
 .prose p {
-  @apply my-4 text-stone-300 text-sm;
+  @apply my-4 text-stone-300/80 text-sm;
 }
 
 .prose h1 {
