@@ -7,6 +7,11 @@ const FOOTER_ITEMS_LEFT = [
     Component: InternalLink,
   },
   {
+    href: "/pgp",
+    children: "PGP key",
+    Component: InternalLink,
+  },
+  {
     href: "https://github.com/backuardo/website",
     children: "view source",
     Component: ExternalLink,
