@@ -110,7 +110,7 @@ p {
 }
 
 .prose h3 {
-  @apply text-xl font-bold tracking-tight mt-6 mb-2;
+  @apply text-base font-bold tracking-tight mt-6 mb-2;
 }
 
 .prose h4 {
@@ -118,15 +118,15 @@ p {
 }
 
 .prose strong {
-  @apply font-semibold;
+  @apply font-bold text-gruvbox-orange;
 }
 
 .prose ul {
-  @apply list-disc pl-6;
+  @apply list-disc pl-6 text-sm text-stone-300/80;
 }
 
 .prose ol {
-  @apply list-decimal pl-6;
+  @apply list-decimal pl-6 text-sm text-stone-300/80;
 }
 
 .prose > :first-child {

@@ -58,7 +58,11 @@ function RoundedImage(props) {
 }
 
 function Code({ children, ...props }) {
-  return <code {...props}>{children}</code>;
+  return (
+    <code className="text-gruvbox-lime bg-neutral-800 p-[2px]" {...props}>
+      {children}
+    </code>
+  );
 }
 
 function slugify(str) {
