@@ -8,8 +8,7 @@ export default function Page() {
         <span className="font-normal text-gruvbox-lime">(a.k.a Backuardo)</span>
       </h1>
       <p className="mb-4 text-sm">
-        I'm a software engineer with a broad toolkit, now specializing in
-        offensive security.
+        I'm a software tactician, now specializing in offensive security.
       </p>
       <p className="mb-4 text-sm">
         I began programming while serving as an infantry squad leader (0331) in
