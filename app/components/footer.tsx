@@ -7,8 +7,8 @@ const FOOTER_ITEMS_LEFT = [
     Component: InternalLink,
   },
   {
-    href: "/pgp",
-    children: "PGP key",
+    href: "mailto:ben@beneisner.io?subject=Hello",
+    children: "email",
     Component: InternalLink,
   },
   {
