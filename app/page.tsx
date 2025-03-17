@@ -1,10 +1,5 @@
 import { Posts } from "app/components/posts";
 
-/**
- * - Aspiring red teamer
- * - In my spare time I like to find vulnerabilities and write exploits.
- */
-
 export default function Page() {
   return (
     <section>
@@ -13,7 +8,7 @@ export default function Page() {
         <span className="font-normal text-gruvbox-lime">(a.k.a Backuardo)</span>
       </h1>
       <p className="mb-4 text-sm">
-        I'm a software tactician and aspiring red teamer.
+        I'm a lead software engineer and emerging red teamer.
       </p>
       <p className="mb-4 text-sm">
         I began programming while serving as an infantry squad leader (0331) in
@@ -27,7 +22,7 @@ export default function Page() {
       <p className="mb-4 text-sm">
         My current focus is offensive security &mdash; I spend my free time
         finding vulnerabilities and developing exploits. I also consult and
-        advise organizations on TTPs for threat defense and incident response.
+        advise organizations on TTPs for threat defense.
       </p>
       <div className="my-8">
         <Posts />
