@@ -21,7 +21,7 @@ const markdownContent = `
 
   ### 3. Bash refresh
   Tied to my RTFM vs. LLM shift, I realized my Bash scripting was getting rusty (which pains me).
-  This month I've been refreshing and leveling-up my Bash skills &mdash; writing recon and exploit scripts during CTF challenges.
+  This month I've been refreshing and leveling-up my Bash skills &mdash; writing recon and exploit scripts during CTF challenges (vs. having an LLM do it for me).
 
   ### 4. Road to CPTS and OSCP
   I'm a few months into preparing for CPTS (Certified Penetration Testing Specialist) and OSCP (Offensive Security Certified Professional), and the grind continues.
