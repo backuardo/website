@@ -8,7 +8,7 @@ export const metadata = {
 const markdownContent = `
   *Last updated: 18-MAR-2025*
 
-  ### 1. New exploit posts
+  ### 1. Exploit proofs-of-concept
   Last week, I [kicked off a series of exploit posts](https://beneisner.io/workbench/exploiting-cve-2025-27152) &mdash; picking an interesting CVE, building a self-contained proof-of-concept, and writing about it.
   Over the next ~two weeks, I'll be working on two more of these posts based on recent CVEs that caught my eye.
 
