@@ -2,10 +2,12 @@ import { CustomMDX } from "app/components/mdx";
 
 export const metadata = {
   title: "Now",
-  description: "What I am working on right now, updated ~monthly.",
+  description: "/now page, updated ~monthly.",
 };
 
 const markdownContent = `
+  This is my [/now](https://nownownow.com/about) page, updated ~monthly.
+
   *Last updated: 18-MAR-2025*
 
   ### 1. Exploit proofs-of-concept
@@ -36,9 +38,6 @@ export default function Page() {
           (18-MAR-25)
         </span>
       </h1>
-      <p className="mb-4 text-sm">
-        What I am working on right now, updated ~monthly.
-      </p>
       <article className="prose">
         <CustomMDX source={markdownContent} />
       </article>
