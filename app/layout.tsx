@@ -13,7 +13,7 @@ import Footer from "./components/footer";
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "beneisner.io",
+    default: "Index | beneisner.io",
     template: "%s | beneisner.io",
   },
   description: "",
@@ -49,7 +49,7 @@ export default function RootLayout({
       className={classNames(
         GeistSans.variable,
         GeistMono.variable,
-        "!bg-neutral-950"
+        "!bg-neutral-950",
       )}
     >
       <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto font-mono bg-neutral-950">

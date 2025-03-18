@@ -12,6 +12,9 @@ const NAV_ITEMS = {
   "/workbench": {
     name: "workbench",
   },
+  "/now": {
+    name: "now",
+  },
 };
 
 export function Navbar() {
@@ -26,7 +29,7 @@ export function Navbar() {
     }
 
     const formattedSegments = segments.map((segment) =>
-      segment.toUpperCase().replace(/ /g, "-")
+      segment.toUpperCase().replace(/ /g, "-"),
     );
 
     if (pathname === "/") {

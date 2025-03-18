@@ -1,7 +1,7 @@
 import { Posts } from "app/components/posts";
 
 export const metadata = {
-  title: "workbench",
+  title: "Workbench",
   description: "",
 };
 
