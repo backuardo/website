@@ -5,7 +5,9 @@ export default function Page() {
     <section>
       <h1 className="mb-8 text-2xl font-bold tracking-tighter uppercase">
         Ben Eisner{" "}
-        <span className="font-normal text-gruvbox-lime">(a.k.a Backuardo)</span>
+        <span className="font-normal text-gruvbox-lime text-sm md:text-2xl">
+          (a.k.a Backuardo)
+        </span>
       </h1>
       <p className="mb-4 text-sm">
         I'm a lead software engineer and emerging red teamer.
