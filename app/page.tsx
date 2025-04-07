@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <section>
       <div className="flex flex-col mb-8 uppercase">
-        <pre className="text-[0.5rem] leading-[1.25] md:text-xs text-gruvbox-lime">
+        <pre className="text-[0.45rem] leading-[1.25] md:text-xs text-gruvbox-lime">
           {ASCII}
         </pre>
         <h2 className="font-normal text-gruvbox-orange text-sm md:text-xl">
