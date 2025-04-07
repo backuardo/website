@@ -49,7 +49,7 @@ export default function RootLayout({
       className={classNames(
         GeistSans.variable,
         GeistMono.variable,
-        "!bg-neutral-950",
+        "!bg-neutral-950"
       )}
     >
       <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto font-mono bg-neutral-950">

@@ -1,14 +1,25 @@
 import { Posts } from "app/components/posts";
 
+const ASCII = `
+██████╗  █████╗  ██████╗██╗  ██╗██╗   ██╗ █████╗ ██████╗ ██████╗  ██████╗ 
+██╔══██╗██╔══██╗██╔════╝██║ ██╔╝██║   ██║██╔══██╗██╔══██╗██╔══██╗██╔═══██╗
+██████╔╝███████║██║     █████╔╝ ██║   ██║███████║██████╔╝██║  ██║██║   ██║
+██╔══██╗██╔══██║██║     ██╔═██╗ ██║   ██║██╔══██║██╔══██╗██║  ██║██║   ██║
+██████╔╝██║  ██║╚██████╗██║  ██╗╚██████╔╝██║  ██║██║  ██║██████╔╝╚██████╔╝
+╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝  ╚═════╝ 
+`;
+
 export default function Page() {
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-bold tracking-tighter uppercase">
-        Ben Eisner{" "}
-        <span className="font-normal text-gruvbox-lime text-sm md:text-2xl">
-          (a.k.a Backuardo)
-        </span>
-      </h1>
+      <div className="flex flex-col mb-8 uppercase">
+        <pre className="text-[0.5rem] leading-[1.25] md:text-xs text-gruvbox-lime">
+          {ASCII}
+        </pre>
+        <h2 className="font-normal text-gruvbox-orange text-sm md:text-xl">
+          (a.k.a. Ben Eisner)
+        </h2>
+      </div>
       <p className="mb-4 text-sm">
         I'm a lead software engineer and emerging red teamer.
       </p>
