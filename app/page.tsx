@@ -33,9 +33,9 @@ export default function Page() {
         developing the operating system for urban development.
       </p>
       <p className="mb-4 text-sm">
-        Right now, I'm deeply focused on offensive security &mdash; I spend my
-        free time finding vulnerabilities and developing exploits. I also
-        consult and advise organizations on TTPs for threat defense.
+        Right now I'm focused on offensive security &mdash; vulnerability
+        research, building automated penetration testing tools and custom
+        exploits.
       </p>
       <div className="my-8">
         <Posts />
