@@ -1,0 +1,134 @@
+---
+title: "Contextual Wordlist Generation"
+publishedAt: "2025-06-04"
+summary: "Building Wordbender: a context-aware, LLM-powered wordlist generator"
+---
+
+## Overview
+
+I've been spending time studying for CPTS and participating in bug bounties lately, and one thing that I keep questioning is the disconnect between the intelligence I gather during reconnaissance and the wordlists I actually use for attacks.
+
+During reconnaissance, we gather target-specific intelligence: org names, technologies, personnel, geographic locations, internal project names, etc. But it's time-consuming to generate a comprehensive wordlist with this context, so we typically use an off-the-shelf wordlist.
+
+Real organizations don't name their infrastructure using dictionary words. They use internal project names, geographic references, tech stacks, and naming conventions that come from years of tech debt and shortcuts.
+
+## Improving the reconnaisance-to-exploitation gap
+I'm building [Wordbender](https://github.com/backuardo/wordbender)—an experiment in using LLMs to generate contextual wordlists. The idea is simple: take the intelligence you've gathered about a target and let an LLM generate wordlists that actually understand that context.
+
+As an example, imagine we're performing a penetration test on Tesla, and want to brute-force subdomains. We feed the following seed words into Wordbender:
+
+```bash
+Tesla, TSLA, Supercharger, Autopilot, Full Self-Driving, Powerwall, Solar Roof, Electric Vehicle, Python, Node.js, Docker, Kubernetes, Tesla Operating System, over-the-air updates, AWS, Austin TX, Model S, Model 3, Model X, Model Y, Cybertruck, Semi, Roadster, Plaid, Ludicrous, Autopilot
+```
+
+And the output contains some promising-looking subdomains we can try:
+
+```bash
+api
+autopilot
+supercharger
+tesla-api
+model3
+models
+modelx
+modely
+cybertruck
+autopilot-dev
+fsd
+fullselfdriving
+powerwall
+solar
+api-v2
+dev
+staging
+prod
+test
+admin
+tesla-dev
+tsla-api
+supercharger-api
+austin
+austin-dev
+tx-prod
+aws-tesla
+docker-registry
+k8s-cluster
+python-api
+nodejs-backend
+ota
+ota-updates
+vehicle-api
+ev-portal
+charging
+energy
+solar-api
+powerwall-monitor
+semi
+roadster
+plaid
+ludicrous-mode
+dev1
+test-autopilot
+staging-fsd
+legacy-api
+temp-prod
+demo
+tesla-internal
+fleet
+```
+
+## What it generates
+
+Right now Wordbender handles a few wordlist types, and I'll be adding more over the coming weeks.
+
+**Password Base Words**: These aren't final passwords—they're the meaningful base words that people build passwords around. The LLM generates personally significant terms that Hashcat can then mutate with rules. Instead of hoping `rockyou.txt` has the right base words, you get terms actually relevant to your target.
+
+**Subdomain Names**: Context-aware subdomain labels that reflect how organizations actually name their infrastructure: `dev-api`, `staging-auth`, `legacy-payments`. I run these first before falling back to generic subdomain lists.
+
+**Directory/File Paths**: Web paths based on the target's technology stack and naming patterns. Again, these supplement rather than replace comprehensive directory lists—you run the targeted list first to catch the obvious hits.
+
+**Cloud Resource Names**: Realistic S3 bucket names, storage accounts, etc. The LLM understands how developers actually name cloud resources (it's usually chaotic and predictable at the same time).
+
+## Implementation
+
+The architecture uses a factory pattern with automatic service discovery, making it easy to add new wordlist types or LLM providers. Currently supports Anthropic Claude, OpenAI GPT-4, and OpenRouter for model access.
+
+Each wordlist type implements specific validation rules—DNS compliance for subdomains, character restrictions for passwords, length limits for cloud resources. The tool handles deduplication, filtering, and format validation automatically.
+
+Multiple operation modes support different workflows:
+- **Interactive mode** for exploratory testing
+- **Direct generation** for scripted attacks: `wordbender generate subdomain -s tesla -s automotive -l 100`
+- **Batch processing** for large-scale operations
+
+## Does it work?
+
+The results have been encouraging so far. The strategy is simple: run targeted wordlists first to grab the obvious hits, then fall back to comprehensive generic lists for broader coverage.
+
+Admittedly, the biggest technical hurdle is crafting good prompts. So while this tool is already pretty helpful, I hope to improve it over the coming months as I get better at writing prompts.
+
+## Trying it out
+
+The tool is open source on [GitHub](https://github.com/backuardo/wordbender) if you want to experiment with it. You'll need Python 3.8+ and an API key for one of the supported LLM providers (Anthropic, OpenAI, or OpenRouter). Alternatively, if your favorite provider isn't implemented yet, or you want to run a local model, it's easy to add a new provider (based on the `WordlistGenerator` abstract base class).
+
+```bash
+# Basic setup
+git clone https://github.com/backuardo/wordbender
+cd wordbender
+uv sync
+uv run wordbender.py config --setup
+
+# Generate targeted base words, then feed to Hashcat
+uv run wordbender.py generate password -s company -s product -l 200
+hashcat -a 0 -m 1000 hashes.txt password_base_wordlist.txt -r rules/best64.rule
+
+# Targeted-then-comprehensive subdomain enumeration
+uv run wordbender.py generate subdomain -s target -s technology -l 100
+gobuster dns -d target.com -w subdomain_wordlist.txt
+gobuster dns -d target.com -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt
+```
+
+## Final thoughts
+
+Wordbender isn't perfect, and it definitely doesn't replace traditional wordlists entirely. But as a supplement to existing techniques, it's proven useful enough that I'll continue building it.
+
+As always, I'm open to feedback, questions, and pull requests.
