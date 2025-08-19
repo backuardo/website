@@ -1,12 +1,12 @@
 import { Posts } from "app/components/posts";
 
 const ASCII = `
-██████╗  █████╗  ██████╗██╗  ██╗██╗   ██╗ █████╗ ██████╗ ██████╗  ██████╗ 
+██████╗  █████╗  ██████╗██╗  ██╗██╗   ██╗ █████╗ ██████╗ ██████╗  ██████╗
 ██╔══██╗██╔══██╗██╔════╝██║ ██╔╝██║   ██║██╔══██╗██╔══██╗██╔══██╗██╔═══██╗
 ██████╔╝███████║██║     █████╔╝ ██║   ██║███████║██████╔╝██║  ██║██║   ██║
 ██╔══██╗██╔══██║██║     ██╔═██╗ ██║   ██║██╔══██║██╔══██╗██║  ██║██║   ██║
 ██████╔╝██║  ██║╚██████╗██║  ██╗╚██████╔╝██║  ██║██║  ██║██████╔╝╚██████╔╝
-╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝  ╚═════╝ 
+╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝  ╚═════╝
 `;
 
 export default function Page() {
@@ -21,7 +21,7 @@ export default function Page() {
         </h2>
       </div>
       <p className="mb-4 text-sm">
-        I'm a lead software engineer and emerging red teamer.
+        I'm a lead software engineer with an interest in offensive security.
       </p>
       <p className="mb-4 text-sm">
         I began programming while serving as an infantry squad leader (0331) in
@@ -33,9 +33,10 @@ export default function Page() {
         developing the operating system for urban development.
       </p>
       <p className="mb-4 text-sm">
-        Right now I'm focused on offensive security &mdash; vulnerability
-        research, building automated penetration testing tools and custom
-        exploits.
+        For the past year, I've been studying offensive security &mdash;
+        focusing on penetration testing, exploit development, offensive tool
+        development, and adversarial methodologies. Right now I'm working toward
+        my OSCP and CPTS certifications.
       </p>
       <div className="my-8">
         <Posts />

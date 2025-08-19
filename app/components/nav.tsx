@@ -12,9 +12,6 @@ const NAV_ITEMS = {
   "/workbench": {
     name: "workbench",
   },
-  "/now": {
-    name: "now",
-  },
 };
 
 export function Navbar() {

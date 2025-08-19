@@ -21,8 +21,8 @@ export default function Page() {
         the original authors.
       </p>
       <p className="text-sm">
-        The exploit code and writeups here are for research purposes only. Don't
-        use them for illegal activities; I am not responsible if you do.
+        The code and writeups here are for research purposes only. Don't use
+        them for illegal activities; I am not responsible if you do.
       </p>
       <div className="my-8">
         <Posts />
