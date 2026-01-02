@@ -3,6 +3,9 @@ import { CustomMDX } from "app/components/mdx";
 import { formatDate, getBlogPosts } from "app/workbench/utils";
 import { baseUrl } from "app/sitemap";
 
+type BlogRouteParams = { slug: string };
+type BlogPageProps = { params: BlogRouteParams };
+
 export async function generateStaticParams() {
   let posts = getBlogPosts();
 
@@ -11,8 +14,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }) {
-  let post = getBlogPosts().find((post) => post.slug === params.slug);
+export function generateMetadata({ params }: BlogPageProps) {
+  let { slug } = params;
+  let post = getBlogPosts().find((post) => post.slug === slug);
   if (!post) {
     return {};
   }
@@ -51,8 +55,9 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function Blog({ params }) {
-  let post = getBlogPosts().find((post) => post.slug === params.slug);
+export default function Blog({ params }: BlogPageProps) {
+  let { slug } = params;
+  let post = getBlogPosts().find((post) => post.slug === slug);
 
   if (!post) {
     notFound();
