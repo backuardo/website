@@ -4,7 +4,7 @@ import { formatDate, getBlogPosts } from "app/workbench/utils";
 import { baseUrl } from "app/sitemap";
 
 type BlogRouteParams = { slug: string };
-type BlogPageProps = { params: BlogRouteParams };
+type BlogPageProps = { params: Promise<BlogRouteParams> };
 
 export async function generateStaticParams() {
   let posts = getBlogPosts();
@@ -14,8 +14,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: BlogPageProps) {
-  let { slug } = params;
+export async function generateMetadata({ params }: BlogPageProps) {
+  let { slug } = await params;
   let post = getBlogPosts().find((post) => post.slug === slug);
   if (!post) {
     return {};
@@ -55,8 +55,8 @@ export function generateMetadata({ params }: BlogPageProps) {
   };
 }
 
-export default function Blog({ params }: BlogPageProps) {
-  let { slug } = params;
+export default async function Blog({ params }: BlogPageProps) {
+  let { slug } = await params;
   let post = getBlogPosts().find((post) => post.slug === slug);
 
   if (!post) {
