@@ -2,7 +2,7 @@
 @import "highlight.js/styles/base16/gruvbox-dark-hard.css";
 
 @theme {
-  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo,
+  --font-mono: var(--font-sometype-mono), ui-monospace, SFMono-Regular, Menlo,
     Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --color-gruvbox-lime: #b8bb26;
   --color-gruvbox-orange: #fb4934;

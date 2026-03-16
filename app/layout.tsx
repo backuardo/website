@@ -1,7 +1,6 @@
 import "./global.css";
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
+import { Sometype_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -9,6 +8,11 @@ import { baseUrl } from "./sitemap";
 import { classNames } from "./utils/class-names";
 import { Navbar } from "./components/nav";
 import Footer from "./components/footer";
+
+const sometypeMono = Sometype_Mono({
+  subsets: ["latin"],
+  variable: "--font-sometype-mono",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -47,8 +51,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={classNames(
-        GeistSans.variable,
-        GeistMono.variable,
+        sometypeMono.variable,
         "!bg-neutral-950"
       )}
     >
