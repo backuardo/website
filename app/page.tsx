@@ -1,12 +1,16 @@
 import { Posts } from "app/components/posts";
 
 const ASCII = `
-██████╗  █████╗  ██████╗██╗  ██╗██╗   ██╗ █████╗ ██████╗ ██████╗  ██████╗
-██╔══██╗██╔══██╗██╔════╝██║ ██╔╝██║   ██║██╔══██╗██╔══██╗██╔══██╗██╔═══██╗
-██████╔╝███████║██║     █████╔╝ ██║   ██║███████║██████╔╝██║  ██║██║   ██║
-██╔══██╗██╔══██║██║     ██╔═██╗ ██║   ██║██╔══██║██╔══██╗██║  ██║██║   ██║
-██████╔╝██║  ██║╚██████╗██║  ██╗╚██████╔╝██║  ██║██║  ██║██████╔╝╚██████╔╝
-╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝  ╚═════╝
+  ▄▄▄▄    ▄▄▄       ▄████▄   ██ ▄█▀ █    ██  ▄▄▄       ██▀███  ▓█████▄  ▒█████
+ ▓█████▄ ▒████▄    ▒██▀ ▀█   ██▄█▒  ██  ▓██▒▒████▄    ▓██ ▒ ██▒▒██▀ ██▌▒██▒  ██▒
+ ▒██▒ ▄██▒██  ▀█▄  ▒▓█    ▄ ▓███▄░ ▓██  ▒██░▒██  ▀█▄  ▓██ ░▄█ ▒░██   █▌▒██░  ██▒
+ ▒██░█▀  ░██▄▄▄▄██ ▒▓▓▄ ▄██▒▓██ █▄ ▓▓█  ░██░░██▄▄▄▄██ ▒██▀▀█▄  ░▓█▄   ▌▒██   ██░
+ ░▓█  ▀█▓ ▓█   ▓██▒▒ ▓███▀ ░▒██▒ █▄▒▒█████▓  ▓█   ▓██▒░██▓ ▒██▒░▒████▓ ░ ████▓▒░
+ ░▒▓███▀▒ ▒▒   ▓▒█░░ ░▒ ▒  ░▒ ▒▒ ▓▒░▒▓▒ ▒ ▒  ▒▒   ▓▒█░░ ▒▓ ░▒▓░ ▒▒▓  ▒ ░ ▒░▒░▒░
+ ▒░▒   ░   ▒   ▒▒ ░  ░  ▒   ░ ░▒ ▒░░░▒░ ░ ░   ▒   ▒▒ ░  ░▒ ░ ▒░ ░ ▒  ▒   ░ ▒ ▒░
+  ░    ░   ░   ▒   ░        ░ ░░ ░  ░░░ ░ ░   ░   ▒     ░░   ░  ░ ░  ░ ░ ░ ░ ▒
+  ░            ░  ░░ ░      ░  ░      ░           ░  ░   ░        ░        ░ ░
+       ░           ░                                            ░
 `;
 
 export default function Page() {
@@ -21,7 +25,8 @@ export default function Page() {
         </h2>
       </div>
       <p className="mb-4 text-sm">
-        I'm a lead software engineer with an interest in offensive security.
+        I'm a lead software engineer specializing in security, developer
+        tooling, infrastructure, and platform engineering.
       </p>
       <p className="mb-4 text-sm">
         I began programming while serving as an infantry squad leader (0331) in
@@ -29,14 +34,14 @@ export default function Page() {
         Dartmouth College and started getting involved in startups. I was an
         early engineer at Cameo from 2017 to 2023, where I helped scale the
         platform to millions of users and later led its crypto initiatives.
-        Currently, I'm the lead engineer at Cedar, a seed-stage startup
-        developing the operating system for urban development.
+        Currently, I'm the lead engineer at Cedar, a seed-stage startup building
+        the operating system for urban development, where I own the
+        infrastructure, DevOps, and security posture of the platform.
       </p>
       <p className="mb-4 text-sm">
-        For the past year, I've been studying offensive security &mdash;
-        focusing on penetration testing, exploit development, offensive tool
-        development, and adversarial methodologies. Right now I'm working toward
-        my OSCP and CPTS certifications.
+        Outside of work, I study offensive security -- penetration testing,
+        exploit development, and adversarial methodology. I'm currently pursuing
+        my CPTS and OSCP certifications.
       </p>
       <div className="my-8">
         <Posts />
