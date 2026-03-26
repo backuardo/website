@@ -25,8 +25,8 @@ export default function Page() {
         </h2>
       </div>
       <p className="mb-4 text-sm">
-        I'm a lead software engineer specializing in security, developer
-        tooling, infrastructure, and platform engineering.
+        I'm a lead software engineer focused on security, developer tooling,
+        infrastructure, and platform engineering.
       </p>
       <p className="mb-4 text-sm">
         I began programming while serving as an infantry squad leader (0331) in
